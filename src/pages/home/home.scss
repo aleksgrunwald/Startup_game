@@ -1,3 +1,20 @@
-page-home {
-
+.main {
+    background-color: rgb(0, 207, 162);
+    position: relative;
+    height: 100%;
+    &__title {
+        position: absolute;
+        color: white;
+        font-size: large;
+        top: 38%;
+        left: 27%;
+        margin: auto;
+    }
+    &__play-btn {
+        background-color: azure;
+        color: rgb(0, 92, 197);
+        position: absolute;
+        top: 50%;
+        left: 33%;
+    }
 }

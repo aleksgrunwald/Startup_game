@@ -1,0 +1,13 @@
+.card {
+    display: flex;
+    align-content: center;
+    &__title {
+        margin: 5% auto;
+    }
+    &__illustration {
+        margin: 9% auto;
+    }
+    &__question {
+        margin: 5% auto;
+    }
+}
