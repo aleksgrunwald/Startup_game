@@ -15,7 +15,7 @@ export class CardServiceProvider {
   }
 
 getCardData() {
-  console.log(this.http.get('http://18.185.102.201:8080/api/v1.0/cards/getCardByID?value=4'))
+ return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
 }
 
 }
