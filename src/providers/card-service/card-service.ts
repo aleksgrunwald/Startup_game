@@ -15,7 +15,8 @@ export class CardServiceProvider {
   }
 
 getCardData() {
- return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+//  return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+ return this.http.get('https://randomuser.me/api/');
 }
 
 }

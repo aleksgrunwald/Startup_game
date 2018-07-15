@@ -25700,6 +25700,11 @@ ion-navbar.toolbar {
   margin: 5% auto;
 }
 
+.card__illustration {
+  -webkit-filter: blur(9px);
+  filter: blur(9px);
+}
+
 .main {
   background-color: #00cfa2;
   position: relative;

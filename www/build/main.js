@@ -72,9 +72,8 @@ var CardServiceProvider = /** @class */ (function () {
         console.log('Hello CardServiceProvider Provider');
     }
     CardServiceProvider.prototype.getCardData = function () {
-        this.http.get('http://18.185.102.201:8080/api/v1.0/cards/getCardByID?value=4').subscribe(function (data) {
-            console.log(data);
-        });
+        //  return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
+        return this.http.get('https://randomuser.me/api/');
     };
     CardServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
@@ -116,7 +115,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <!-- Display stats component here -->\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="main">\n    <div class="main__title">\n      <h1>Startup game</h1>\n    </div>\n    <button ion-button class="main__play-btn" (click)="showCard()">\n      Zaczynamy!\n    </button>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n\n    <!-- Display stats component here -->\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <div class="main">\n    <div class="main__title">\n      <h1>Startup game</h1>\n    </div>\n    <button ion-button class="main__play-btn" (click)="showCard()">\n      Zaczynamy!\n    </button>\n  </div>\n</ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
     ], HomePage);
@@ -172,7 +171,7 @@ var ListPage = /** @class */ (function () {
     };
     ListPage = ListPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\list\list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Chosen</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <!-- <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div> -->\n</ion-content>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\list\list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\list\list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Chosen</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <!-- <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div> -->\n</ion-content>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\list\list.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]])
     ], ListPage);
@@ -334,7 +333,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\app\app.html"*/'<ion-menu [content]="content">\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -378,23 +377,26 @@ var CardPage = /** @class */ (function () {
         this.cardServiceProvider = cardServiceProvider;
     }
     CardPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad CardPage');
-    };
-    CardPage.prototype.getCard = function () {
         var _this = this;
+        console.log('yoyoyo');
         this.cardServiceProvider.getCardData().subscribe(function (data) {
             _this.card = data;
-            console.log(_this.card);
+            console.log(_this.card.results[0]);
         });
+    };
+    CardPage.prototype.chosenAnswer = function () {
+        // this.cardServiceProvider.getCardData().subscribe(data => {
+        //   this.card = data
+        //   console.log(this.card)
+        // })
     };
     CardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center class="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.title}}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <img src="assets/imgs/blank-image.png">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus odio eros, sed ornare ante eleifend non. In elementum\n        vitaes.\n        <br>\n        <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?\n      </ion-row>\n      <ion-row class="card__answers">\n        <ion-col class="card__answers__no">\n          <button ion-button class="main__play-btn" (click)="getCard()">Nie</button>\n        </ion-col>\n        <ion-col class="card__answers__yes">\n          <button ion-button class="main__play-btn" (click)="getCard()">Tak</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/,
+            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center class="card" *ngIf="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.results[0].location.city }}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <!-- <img src="assets/imgs/blank-image.png"> -->\n        <img [src]="card.results[0].picture.large">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} \n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        {{ card.results[0].location.street }}{{ card.results[0].location.street }}\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n         {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>\n        <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?\n      </ion-row>\n      <ion-row class="card__answers">\n        <ion-col class="card__answers__no">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'no\')">Nie</button>\n        </ion-col>\n        <ion-col class="card__answers__yes">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'yes\')">Tak</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */]) === "function" && _c || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */]])
     ], CardPage);
     return CardPage;
-    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=card.js.map

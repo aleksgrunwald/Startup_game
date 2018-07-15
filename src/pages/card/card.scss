@@ -10,4 +10,7 @@
     &__question {
         margin: 5% auto;
     }
+    &__illustration {
+        filter: blur(9px);
+    }
 }

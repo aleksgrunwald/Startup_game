@@ -11,25 +11,30 @@
   
   <ion-content padding>
   
-    <ion-grid text-center class="card">
+    <ion-grid text-center class="card" *ngIf="card">
       <ion-row justify-content-center align-items-center class="card__title">
-        <h3>{{ card.title}}</h3>
+        <h3>{{ card.results[0].location.city }}</h3>
       </ion-row>
       <ion-row justify-content-center align-items-center class="card__illustration">
-        <img src="assets/imgs/blank-image.png">
+        <!-- <img src="assets/imgs/blank-image.png"> -->
+        <img [src]="card.results[0].picture.large">
       </ion-row>
       <ion-row justify-content-center align-items-center class="card__question">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin maximus odio eros, sed ornare ante eleifend non. In elementum
-        vitaes.
+        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}
+        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} 
+        {{ card.results[0].location.street }} {{ card.results[0].location.street }}
+        {{ card.results[0].location.street }}{{ card.results[0].location.street }}
+        {{ card.results[0].location.street }} {{ card.results[0].location.street }}
+         {{ card.results[0].location.street }} {{ card.results[0].location.street }}
         <br>
         <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?
       </ion-row>
       <ion-row class="card__answers">
         <ion-col class="card__answers__no">
-          <button ion-button class="main__play-btn" (click)="getCard()">Nie</button>
+          <button ion-button class="main__play-btn" (click)="chosenAnswer('no')">Nie</button>
         </ion-col>
         <ion-col class="card__answers__yes">
-          <button ion-button class="main__play-btn" (click)="getCard()">Tak</button>
+          <button ion-button class="main__play-btn" (click)="chosenAnswer('yes')">Tak</button>
         </ion-col>
       </ion-row>
     </ion-grid>
