@@ -15,8 +15,8 @@
     &__illustration img{
         filter: blur(10px) saturate(6);
         border-radius: 50%;
-        width: 180px;
-        height: 180px; 
+        width: 230px;
+        height: 230px; 
     }
 }
 
@@ -27,11 +27,14 @@
     // position: fixed;
     // bottom: 0px;
     &__yes, &__no {
-        flex: 1 1 auto;    
+        flex: 1 1 auto; 
+        border-radius: 0;
+        margin: 0;   
     }
     &__yes {
         background-color: rgb(5, 182, 123);
-    }&__no {
+    }
+    &__no {
         background-color: rgb(131, 14, 14);
     }
 }

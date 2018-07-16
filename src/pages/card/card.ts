@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CardServiceProvider } from '../../providers/card-service/card-service';
+// import { StatisticsComponent } from '../../components/statistics/statistics';
 
-/**
- * Generated class for the CardPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -17,14 +12,15 @@ import { CardServiceProvider } from '../../providers/card-service/card-service';
 
 export class CardPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public cardServiceProvider: CardServiceProvider) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public cardServiceProvider: CardServiceProvider
+  ) {}
 
-  }
-
-  card: any
+  card: any;
 
   ionViewDidLoad() {
-    console.log('yoyoyo')
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
     })

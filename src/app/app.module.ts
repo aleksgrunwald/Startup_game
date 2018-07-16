@@ -11,13 +11,16 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CardPage } from '../pages/card/card';
 import { CardServiceProvider } from '../providers/card-service/card-service';
+import { StatisticsComponent } from '../components/statistics/statistics';
+import { StatisticsServiceProvider } from '../providers/statistics-service/statistics-service';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
-    CardPage
+    CardPage,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +38,8 @@ import { CardServiceProvider } from '../providers/card-service/card-service';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CardServiceProvider
+    CardServiceProvider,
+    StatisticsServiceProvider
   ]
 })
 export class AppModule {}
