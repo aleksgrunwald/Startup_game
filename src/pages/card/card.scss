@@ -1,6 +1,8 @@
 .card {
     display: flex;
-    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
     &__title {
         margin: 5% auto;
     }
@@ -10,7 +12,31 @@
     &__question {
         margin: 5% auto;
     }
-    &__illustration {
-        filter: blur(9px);
+    &__illustration img{
+        filter: blur(10px) saturate(6);
+        border-radius: 50%;
+        width: 180px;
+        height: 180px; 
     }
+}
+
+.answers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    // position: fixed;
+    // bottom: 0px;
+    &__yes, &__no {
+        flex: 1 1 auto;    
+    }
+    &__yes {
+        background-color: rgb(5, 182, 123);
+    }&__no {
+        background-color: rgb(131, 14, 14);
+    }
+}
+
+
+.scroll-content {
+    padding: 0 !important;
 }

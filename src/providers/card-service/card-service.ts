@@ -19,4 +19,8 @@ getCardData() {
  return this.http.get('https://randomuser.me/api/');
 }
 
+sendAnswer(answer) {
+  console.log(`answer sent to API. You've chosen ${answer}`)
+}
+
 }

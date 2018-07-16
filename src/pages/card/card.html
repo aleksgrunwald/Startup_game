@@ -11,7 +11,7 @@
   
   <ion-content padding>
   
-    <ion-grid text-center class="card" *ngIf="card">
+    <ion-grid text-center *ngIf="card" class="card">
       <ion-row justify-content-center align-items-center class="card__title">
         <h3>{{ card.results[0].location.city }}</h3>
       </ion-row>
@@ -25,18 +25,22 @@
         {{ card.results[0].location.street }} {{ card.results[0].location.street }}
         {{ card.results[0].location.street }}{{ card.results[0].location.street }}
         {{ card.results[0].location.street }} {{ card.results[0].location.street }}
-         {{ card.results[0].location.street }} {{ card.results[0].location.street }}
         <br>
         <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?
       </ion-row>
-      <ion-row class="card__answers">
+      <!-- <ion-row class="card__answers row row-bottom">
         <ion-col class="card__answers__no">
           <button ion-button class="main__play-btn" (click)="chosenAnswer('no')">Nie</button>
         </ion-col>
-        <ion-col class="card__answers__yes">
+        <ion-col bottom class="card__answers__yes">
           <button ion-button class="main__play-btn" (click)="chosenAnswer('yes')">Tak</button>
         </ion-col>
-      </ion-row>
+      </ion-row> -->
     </ion-grid>
+
+    <section class="answers" bottom>
+        <button ion-button class="answers__no" (click)="chosenAnswer('no')">Nie</button>
+        <button ion-button class="answers__yes" (click)="chosenAnswer('yes')">Tak</button>
+    </section>
     
   </ion-content>

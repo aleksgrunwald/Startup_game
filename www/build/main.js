@@ -75,6 +75,9 @@ var CardServiceProvider = /** @class */ (function () {
         //  return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
         return this.http.get('https://randomuser.me/api/');
     };
+    CardServiceProvider.prototype.sendAnswer = function (answer) {
+        console.log("answer sent to API. You've chosen " + answer);
+    };
     CardServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
@@ -381,18 +384,18 @@ var CardPage = /** @class */ (function () {
         console.log('yoyoyo');
         this.cardServiceProvider.getCardData().subscribe(function (data) {
             _this.card = data;
-            console.log(_this.card.results[0]);
         });
     };
-    CardPage.prototype.chosenAnswer = function () {
-        // this.cardServiceProvider.getCardData().subscribe(data => {
-        //   this.card = data
-        //   console.log(this.card)
-        // })
+    CardPage.prototype.chosenAnswer = function (answer) {
+        var _this = this;
+        this.cardServiceProvider.sendAnswer(answer);
+        this.cardServiceProvider.getCardData().subscribe(function (data) {
+            _this.card = data;
+        });
     };
     CardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center class="card" *ngIf="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.results[0].location.city }}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <!-- <img src="assets/imgs/blank-image.png"> -->\n        <img [src]="card.results[0].picture.large">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} \n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        {{ card.results[0].location.street }}{{ card.results[0].location.street }}\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n         {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>\n        <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?\n      </ion-row>\n      <ion-row class="card__answers">\n        <ion-col class="card__answers__no">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'no\')">Nie</button>\n        </ion-col>\n        <ion-col class="card__answers__yes">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'yes\')">Tak</button>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/,
+            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n  \n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center *ngIf="card" class="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.results[0].location.city }}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <!-- <img src="assets/imgs/blank-image.png"> -->\n        <img [src]="card.results[0].picture.large">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} \n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        {{ card.results[0].location.street }}{{ card.results[0].location.street }}\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>\n        <br>Pellentesque finibus auctor tortor, id sagittis tellus pretium at?\n      </ion-row>\n      <!-- <ion-row class="card__answers row row-bottom">\n        <ion-col class="card__answers__no">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'no\')">Nie</button>\n        </ion-col>\n        <ion-col bottom class="card__answers__yes">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'yes\')">Tak</button>\n        </ion-col>\n      </ion-row> -->\n    </ion-grid>\n\n    <section class="answers" bottom>\n        <button ion-button class="answers__no" (click)="chosenAnswer(\'no\')">Nie</button>\n        <button ion-button class="answers__yes" (click)="chosenAnswer(\'yes\')">Tak</button>\n    </section>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\startup_game\src\pages\card\card.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */]])
     ], CardPage);

@@ -27,15 +27,14 @@ export class CardPage {
     console.log('yoyoyo')
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
-      console.log(this.card.results[0]);
     })
   }
 
-  chosenAnswer() {
-    // this.cardServiceProvider.getCardData().subscribe(data => {
-    //   this.card = data
-    //   console.log(this.card)
-    // })
+  chosenAnswer(answer) {
+    this.cardServiceProvider.sendAnswer(answer)
+    this.cardServiceProvider.getCardData().subscribe(data => {
+      this.card = data;
+    })
   }
 
 }
