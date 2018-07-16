@@ -15,7 +15,7 @@ export class StatisticsServiceProvider {
   }
 
   getStatistics() {
-    return this.http.get('https://randomuser.me/api/')
+    return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8')
   }
 
 }

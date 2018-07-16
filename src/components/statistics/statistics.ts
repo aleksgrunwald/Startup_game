@@ -22,7 +22,7 @@ export class StatisticsComponent implements OnInit{
   ngOnInit() {
     this.statisticsProvider.getStatistics().subscribe(data => {
       this.statistics = data;
-      console.log(this.statistics.results[0])
+      console.log(this.statistics)
     })
   }
 
