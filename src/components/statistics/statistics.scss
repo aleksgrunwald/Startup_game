@@ -1,3 +1,15 @@
-statistics {
-
+.stats {
+    list-style-type: none;
+    &__element {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        &__icon {
+            border-radius: 50%;
+            height: 22px;
+            width: 22px;
+            background-color: rgb(174, 198, 199);
+            margin: 0 6px;
+        }
+    }
 }

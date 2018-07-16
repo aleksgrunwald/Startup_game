@@ -8,7 +8,6 @@ webpackJsonp([1],{
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__ = __webpack_require__(155);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_statistics_service_statistics_service__ = __webpack_require__(156);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -21,17 +20,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
+// import { StatisticsComponent } from '../../components/statistics/statistics';
 var CardPage = /** @class */ (function () {
-    function CardPage(navCtrl, navParams, cardServiceProvider, statisticsProvicer) {
+    function CardPage(navCtrl, navParams, cardServiceProvider) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.cardServiceProvider = cardServiceProvider;
-        this.statisticsProvicer = statisticsProvicer;
     }
     CardPage.prototype.ionViewDidLoad = function () {
         var _this = this;
-        console.log('yoyoyo');
         this.cardServiceProvider.getCardData().subscribe(function (data) {
             _this.card = data;
         });
@@ -49,8 +46,7 @@ var CardPage = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
-            __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */],
-            __WEBPACK_IMPORTED_MODULE_3__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */]])
+            __WEBPACK_IMPORTED_MODULE_2__providers_card_service_card_service__["a" /* CardServiceProvider */]])
     ], CardPage);
     return CardPage;
 }());
@@ -119,16 +115,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-/*
-  Generated class for the CardServiceProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 var CardServiceProvider = /** @class */ (function () {
     function CardServiceProvider(http) {
         this.http = http;
-        console.log('Hello CardServiceProvider Provider');
     }
     CardServiceProvider.prototype.getCardData = function () {
         //  return this.http.get('https://jsonplaceholder.typicode.com/posts/1')
@@ -148,50 +137,7 @@ var CardServiceProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 156:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatisticsServiceProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/*
-  Generated class for the StatisticsServiceProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
-var StatisticsServiceProvider = /** @class */ (function () {
-    function StatisticsServiceProvider(http) {
-        this.http = http;
-        console.log('Hello StatisticsServiceProvider Provider');
-    }
-    StatisticsServiceProvider.prototype.getStatistics = function () {
-        return this.http.get('https://randomuser.me/api/');
-    };
-    StatisticsServiceProvider = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
-    ], StatisticsServiceProvider);
-    return StatisticsServiceProvider;
-}());
-
-//# sourceMappingURL=statistics-service.js.map
-
-/***/ }),
-
-/***/ 200:
+/***/ 199:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -231,7 +177,7 @@ var HomePage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 201:
+/***/ 200:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -288,6 +234,49 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
+/***/ 201:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatisticsServiceProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the StatisticsServiceProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var StatisticsServiceProvider = /** @class */ (function () {
+    function StatisticsServiceProvider(http) {
+        this.http = http;
+        // console.log('Hello StatisticsServiceProvider Provider');
+    }
+    StatisticsServiceProvider.prototype.getStatistics = function () {
+        return this.http.get('https://randomuser.me/api/');
+    };
+    StatisticsServiceProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], StatisticsServiceProvider);
+    return StatisticsServiceProvider;
+}());
+
+//# sourceMappingURL=statistics-service.js.map
+
+/***/ }),
+
 /***/ 202:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -312,14 +301,14 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common_http__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_home_home__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_list_list__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(198);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_card_card__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__providers_card_service_card_service__ = __webpack_require__(155);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_statistics_statistics__ = __webpack_require__(278);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_statistics_service_statistics_service__ = __webpack_require__(156);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_statistics_service_statistics_service__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -390,10 +379,10 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(196);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(195);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(198);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(200);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -461,6 +450,7 @@ var MyApp = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatisticsComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__ = __webpack_require__(201);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -471,6 +461,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 /**
  * Generated class for the StatisticsComponent component.
  *
@@ -478,17 +469,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Components.
  */
 var StatisticsComponent = /** @class */ (function () {
-    function StatisticsComponent() {
-        console.log('Hello StatisticsComponent Component');
-        this.text = 'Hello World';
+    function StatisticsComponent(statisticsProvider) {
+        this.statisticsProvider = statisticsProvider;
     }
+    StatisticsComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.statisticsProvider.getStatistics().subscribe(function (data) {
+            _this.statistics = data;
+            console.log(_this.statistics.results[0]);
+        });
+    };
     StatisticsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'statistics',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/'<!-- Generated template for the StatisticsComponent component -->\n<section *ngIf="statistics">\n  <ul>\n    <li>\n      <div class="stats_icon"></div>\n      <p>{{ statistics.results[0].location.city }}</p>\n    </li>\n  </ul>\n</section>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/
+            selector: 'statistics',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/'<!-- Generated template for the StatisticsComponent component -->\n<section *ngIf="statistics">\n  <ul class="stats">\n    <li class="stats__element">\n      <div class="stats__element__icon"></div>\n      <p>{{ statistics.results[0].location.city }}</p>\n    </li>\n  </ul>\n</section>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */]) === "function" && _a || Object])
     ], StatisticsComponent);
     return StatisticsComponent;
+    var _a;
 }());
 
 //# sourceMappingURL=statistics.js.map
