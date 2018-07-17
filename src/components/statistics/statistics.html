@@ -1,7 +1,7 @@
 <!-- Generated template for the StatisticsComponent component -->
 <section *ngIf="statistics">
   <ul class="stats">
-    <li class="stats__element" *ngFor="let number of statistics.data">
+    <li class="stats__element" *ngFor="let number of statistics.data | slice:0:4; let i=index">
       <div class="stats__element__icon"></div>
       <p>{{ number }}</p>
     </li>

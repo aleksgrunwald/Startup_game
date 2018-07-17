@@ -25693,7 +25693,11 @@ ion-navbar.toolbar {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
   padding: 0;
+  margin: 0 18px;
 }
 
 .stats__element {
@@ -25716,7 +25720,7 @@ ion-navbar.toolbar {
   border-radius: 50%;
   height: 22px;
   width: 22px;
-  background-color: #aec6c7;
+  background-color: #cfdedf;
   margin: 0 6px;
 }
 
