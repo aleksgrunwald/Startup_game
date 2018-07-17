@@ -14,7 +14,7 @@ import { StatisticsServiceProvider } from '../../providers/statistics-service/st
 
 export class StatisticsComponent implements OnInit{
 
-  statistics: any;
+  statistics: any = [];
 
   constructor(public statisticsProvider: StatisticsServiceProvider) {
   }
@@ -22,7 +22,7 @@ export class StatisticsComponent implements OnInit{
   ngOnInit() {
     this.statisticsProvider.getStatistics().subscribe(data => {
       this.statistics = data;
-      console.log(this.statistics)
+      console.log(this.statistics.data)
     })
   }
 

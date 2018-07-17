@@ -25680,6 +25680,20 @@ ion-navbar.toolbar {
 
 .stats {
   list-style-type: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 0;
 }
 
 .stats__element {
@@ -25737,8 +25751,8 @@ ion-navbar.toolbar {
 }
 
 .card__illustration img {
-  -webkit-filter: blur(10px) saturate(6);
-  filter: blur(10px) saturate(6);
+  -webkit-filter: blur(15px) saturate(7) grayscale(50%);
+  filter: blur(15px) saturate(7) grayscale(50%);
   border-radius: 50%;
   width: 230px;
   height: 230px;
@@ -25770,11 +25784,11 @@ ion-navbar.toolbar {
 }
 
 .answers__yes {
-  background-color: #05b67b;
+  background-color: #b9ccc6;
 }
 
 .answers__no {
-  background-color: #830e0e;
+  background-color: #ccc5c5;
 }
 
 .scroll-content {

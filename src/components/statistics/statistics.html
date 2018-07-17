@@ -1,9 +1,9 @@
 <!-- Generated template for the StatisticsComponent component -->
 <section *ngIf="statistics">
   <ul class="stats">
-    <li class="stats__element">
+    <li class="stats__element" *ngFor="let number of statistics.data">
       <div class="stats__element__icon"></div>
-      <p>gg</p>
+      <p>{{ number }}</p>
     </li>
   </ul>
 </section>

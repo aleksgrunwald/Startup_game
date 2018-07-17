@@ -14,7 +14,7 @@
         margin: 5% auto;
     }
     &__illustration img{
-        filter: blur(10px) saturate(6);
+        filter: blur(15px) saturate(7) grayscale(50%);
         border-radius: 50%;
         width: 230px;
         height: 230px; 
@@ -31,10 +31,10 @@
         margin: 0;   
     }
     &__yes {
-        background-color: rgb(5, 182, 123);
+        background-color: rgb(185, 204, 198);
     }
     &__no {
-        background-color: rgb(131, 14, 14);
+        background-color: rgb(204, 197, 197);
     }
 }
 

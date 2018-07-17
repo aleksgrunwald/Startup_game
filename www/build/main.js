@@ -42,7 +42,7 @@ var CardPage = /** @class */ (function () {
     };
     CardPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n\n      <statistics></statistics>\n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center *ngIf="card" class="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.results[0].location.city }}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <!-- <img src="assets/imgs/blank-image.png"> -->\n        <img [src]="card.results[0].picture.large">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} \n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        {{ card.results[0].location.street }}{{ card.results[0].location.street }}\n        <br><br>Lorem ipsum dolores est kolomnus??\n      </ion-row>\n      <!-- <ion-row class="card__answers row row-bottom">\n        <ion-col class="card__answers__no">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'no\')">Nie</button>\n        </ion-col>\n        <ion-col bottom class="card__answers__yes">\n          <button ion-button class="main__play-btn" (click)="chosenAnswer(\'yes\')">Tak</button>\n        </ion-col>\n      </ion-row> -->\n    </ion-grid>\n\n    <ion-footer class="answers" position="bottom">\n        <button ion-button class="answers__no" (click)="chosenAnswer(\'no\')">Nie</button>\n        <button ion-button class="answers__yes" (click)="chosenAnswer(\'yes\')">Tak</button>\n    </ion-footer>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/,
+            selector: 'page-card',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/'<ion-header>\n    <ion-navbar>\n      <button ion-button menuToggle>\n        <ion-icon name="menu"></ion-icon>\n      </button>\n\n      <statistics></statistics>\n      <!-- Display stats component here -->\n  \n    </ion-navbar>\n  </ion-header>\n  \n  <ion-content padding>\n  \n    <ion-grid text-center *ngIf="card" class="card">\n      <ion-row justify-content-center align-items-center class="card__title">\n        <h3>{{ card.results[0].location.city }}</h3>\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__illustration">\n        <!-- <img src="assets/imgs/blank-image.png"> -->\n        <img [src]="card.results[0].picture.large">\n      </ion-row>\n      <ion-row justify-content-center align-items-center class="card__question">\n        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} \n        {{ card.results[0].location.street }} {{ card.results[0].location.street }}\n        {{ card.results[0].location.street }}{{ card.results[0].location.street }}\n        <br><br><b>Lorem ipsum dolores est kolomnus??</b>\n      </ion-row>\n    </ion-grid>\n\n    <ion-footer class="answers" position="bottom">\n        <button ion-button class="answers__no" (click)="chosenAnswer(\'no\')">Nie</button>\n        <button ion-button class="answers__yes" (click)="chosenAnswer(\'yes\')">Tak</button>\n    </ion-footer>\n    \n  </ion-content>'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\pages\card\card.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */],
@@ -264,7 +264,7 @@ var StatisticsServiceProvider = /** @class */ (function () {
         // console.log('Hello StatisticsServiceProvider Provider');
     }
     StatisticsServiceProvider.prototype.getStatistics = function () {
-        return this.http.get('https://randomuser.me/api/');
+        return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
     };
     StatisticsServiceProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
@@ -471,21 +471,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var StatisticsComponent = /** @class */ (function () {
     function StatisticsComponent(statisticsProvider) {
         this.statisticsProvider = statisticsProvider;
+        this.statistics = [];
     }
     StatisticsComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.statisticsProvider.getStatistics().subscribe(function (data) {
             _this.statistics = data;
-            console.log(_this.statistics.results[0].location.city);
+            console.log(_this.statistics.data);
         });
     };
     StatisticsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'statistics',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/'<!-- Generated template for the StatisticsComponent component -->\n<section *ngIf="statistics">\n  <ul class="stats">\n    <li class="stats__element">\n      <div class="stats__element__icon"></div>\n      <p>gg</p>\n    </li>\n  </ul>\n</section>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/
+            selector: 'statistics',template:/*ion-inline-start:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/'<!-- Generated template for the StatisticsComponent component -->\n<section *ngIf="statistics">\n  <ul class="stats">\n    <li class="stats__element" *ngFor="let number of statistics.data">\n      <div class="stats__element__icon"></div>\n      <p>{{ number }}</p>\n    </li>\n  </ul>\n</section>\n'/*ion-inline-end:"C:\Praca\SKN\StartUp_game\Startup_game-Ionic\Startup_game\src\components\statistics\statistics.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_statistics_service_statistics_service__["a" /* StatisticsServiceProvider */]) === "function" && _a || Object])
     ], StatisticsComponent);
     return StatisticsComponent;
+    var _a;
 }());
 
 //# sourceMappingURL=statistics.js.map

@@ -1,5 +1,9 @@
 .stats {
     list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
     &__element {
         display: flex;
         flex-direction: row;
