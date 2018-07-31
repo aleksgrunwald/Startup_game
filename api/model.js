@@ -5,6 +5,7 @@ const tick = (params, decision, card) => {
   } else {
     params.cash += Math.floor((Math.random() - 0.5) * 200);
   }
+  return params;
 };
 
 module.exports = {
