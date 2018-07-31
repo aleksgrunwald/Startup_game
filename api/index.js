@@ -7,7 +7,7 @@ const paramsDefaults = {
   cash: 3000
 };
 
-let params = _.clone(paramsDefaults);
+let params;
 
 const startNewGame = () => {
   params = _.clone(paramsDefaults);
@@ -16,10 +16,24 @@ const startNewGame = () => {
 
 const getParams = () => params;
 
-const getCard = () => cards[0];
+const getCard = () => cards[Math.floor(Math.random() * cards.length)];
+
+const sendDecision = bool => {
+  if (bool) {
+    params.param1 = Math.floor(Math.random() * 1000);
+  } else {
+    params.cash += Math.floor((Math.random() - 0.5) * 200);
+  }
+};
+
+const endGame = () => ({
+  score: params.param1 + params.param2 + params.cash
+});
 
 module.exports = {
   startNewGame,
   getParams,
-  getCard
+  getCard,
+  sendDecision,
+  endGame
 };
