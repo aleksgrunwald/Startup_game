@@ -26,4 +26,9 @@ export class StatisticsComponent implements OnInit{
     })
   }
 
+  wypiszConsole() {
+    console.log("Odswiezylem statystyke!!!!!!")
+  }
+
+
 }
