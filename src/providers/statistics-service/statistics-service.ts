@@ -15,7 +15,8 @@ export class StatisticsServiceProvider {
   }
 
   getStatistics() {
-    return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8')
+    // console.log('get Statistics from Statistics rpovider');
+    return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
   }
 
 }

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CardServiceProvider } from '../../providers/card-service/card-service';
-// import { StatisticsComponent } from '../../components/statistics/statistics';
+import { StatisticsComponent } from '../../components/statistics/statistics';
 
 
 @IonicPage()
@@ -18,19 +18,23 @@ export class CardPage {
     public cardServiceProvider: CardServiceProvider
   ) {}
 
+  @ViewChild(StatisticsComponent)
+  statisticsComponent: StatisticsComponent
   card: any;
 
   ionViewDidLoad() {
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
-    })
+    });
+    // this.statisticsComponent.wypiszConsole();
   }
 
   chosenAnswer(answer) {
-    this.cardServiceProvider.sendAnswer(answer)
+    this.cardServiceProvider.sendAnswer(answer);
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
-    })
+    });
+    this.statisticsComponent.wypiszConsole();
   }
 
 }
