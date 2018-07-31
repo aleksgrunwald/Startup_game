@@ -20,14 +20,14 @@ export class StatisticsComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.statisticsProvider.getStatistics().subscribe(data => {
+  }
+
+  
+  getStatistics() {
+    this.statisticsProvider.downloadStatistics().subscribe(data => {
       this.statistics = data;
       console.log('new numbers')
     })
-  }
-
-  wypiszConsole() {
-    console.log("Odswiezylem statystyke!!!!!!")
   }
 
 

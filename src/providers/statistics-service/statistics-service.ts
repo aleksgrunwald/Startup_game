@@ -11,11 +11,9 @@ import { Injectable } from '@angular/core';
 export class StatisticsServiceProvider {
 
   constructor(public http: HttpClient) {
-    // console.log('Hello StatisticsServiceProvider Provider');
   }
 
-  getStatistics() {
-    // console.log('get Statistics from Statistics rpovider');
+  downloadStatistics() {
     return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
   }
 

@@ -26,7 +26,7 @@ export class CardPage {
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
     });
-    // this.statisticsComponent.wypiszConsole();
+    this.statisticsComponent.getStatistics();
   }
 
   chosenAnswer(answer) {
@@ -34,7 +34,7 @@ export class CardPage {
     this.cardServiceProvider.getCardData().subscribe(data => {
       this.card = data;
     });
-    this.statisticsComponent.wypiszConsole();
+    this.statisticsComponent.getStatistics();
   }
 
 }
