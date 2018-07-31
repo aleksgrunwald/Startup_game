@@ -1,29 +1,31 @@
 const _ = require("lodash");
-const cards = require("./cards");
+const model = require("./model");
+const cardLottery = require("./card_lottery");
 
 const paramsDefaults = {
   param1: 100,
   param2: 200,
-  cash: 3000
+  cash: 0
 };
 
 let params;
+let currentCard;
 
 const startNewGame = () => {
   params = _.clone(paramsDefaults);
-  return { status: "ok" };
+  return { message: "Game started" };
 };
 
 const getParams = () => params;
 
-const getCard = () => cards[Math.floor(Math.random() * cards.length)];
+const getCard = () => {
+  currentCard = cardLottery.newCard(params);
+  return currentCard;
+};
 
-const sendDecision = bool => {
-  if (bool) {
-    params.param1 = Math.floor(Math.random() * 1000);
-  } else {
-    params.cash += Math.floor((Math.random() - 0.5) * 200);
-  }
+const sendDecision = decision => {
+  params = model.tick(params, decision, currentCard);
+  return { message: "Params changed" };
 };
 
 const endGame = () => ({
