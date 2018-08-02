@@ -1,44 +1,44 @@
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: relative;
-    top: 40px;
-    &__title {
-        margin: 5% auto;
-    }
-    &__illustration {
-        margin: 9% auto;
-    }
-    &__question {
-        margin: 5% auto;
-    }
-    &__illustration img{
-        filter: blur(15px) saturate(7) grayscale(50%);
-        border-radius: 50%;
-        width: 230px;
-        height: 230px; 
-    }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  top: 40px;
+  &__title {
+    margin: 5% auto;
+  }
+  &__illustration {
+    margin: 9% auto;
+  }
+  &__question {
+    margin: 5% auto;
+  }
+  &__illustration img {
+    // filter: blur(15px) saturate(7) grayscale(50%);
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+  }
 }
 
 .answers {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    &__yes, &__no {
-        flex: 1 1 auto; 
-        border-radius: 0;
-        margin: 0;   
-    }
-    &__yes {
-        background-color: rgb(185, 204, 198);
-    }
-    &__no {
-        background-color: rgb(204, 197, 197);
-    }
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  &__yes,
+  &__no {
+    flex: 1 1 auto;
+    border-radius: 0;
+    margin: 0;
+  }
+  &__yes {
+    background-color: rgb(185, 204, 198);
+  }
+  &__no {
+    background-color: rgb(204, 197, 197);
+  }
 }
 
-
 .scroll-content {
-    padding: 0 !important;
+  padding: 0 !important;
 }

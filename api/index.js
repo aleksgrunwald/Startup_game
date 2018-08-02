@@ -32,6 +32,8 @@ const endGame = () => ({
   score: params.param1 + params.param2 + params.cash
 });
 
+startNewGame();
+
 module.exports = {
   startNewGame,
   getParams,

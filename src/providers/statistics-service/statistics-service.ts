@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
+import { HttpClient } from "@angular/common/http";
+import { Injectable } from "@angular/core";
+import { getParams } from "../../../api";
 /*
   Generated class for the StatisticsServiceProvider provider.
 
@@ -9,12 +9,13 @@ import { Injectable } from '@angular/core';
 */
 @Injectable()
 export class StatisticsServiceProvider {
-
-  constructor(public http: HttpClient) {
-  }
+  constructor(public http: HttpClient) {}
 
   downloadStatistics() {
-    return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
+    const params = getParams();
+    return {
+      data: [params.param1, params.param2, params.cash, 0]
+    };
+    // return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
   }
-
 }

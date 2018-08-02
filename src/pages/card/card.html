@@ -1,37 +1,36 @@
 <ion-header>
-    <ion-navbar hideBackButton>
-      <button ion-button menuToggle>
-        <ion-icon name="menu"></ion-icon>
-      </button>
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
 
-      <statistics #statisticsComponent></statistics>
-      <!-- Display stats component here -->
-  
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-  
-    <ion-grid text-center *ngIf="card" class="card">
-      <ion-row justify-content-center align-items-center class="card__title">
-        <h3>{{ card.results[0].location.city }}</h3>
-      </ion-row>
-      <ion-row justify-content-center align-items-center class="card__illustration">
-        <!-- <img src="assets/imgs/blank-image.png"> -->
-        <img [src]="card.results[0].picture.large">
-      </ion-row>
-      <ion-row justify-content-center align-items-center class="card__question">
-        {{ card.results[0].location.street }} {{ card.results[0].location.street }} {{ card.results[0].location.street }}
-        <br>{{ card.results[0].location.street }} {{ card.results[0].location.street }} 
-        {{ card.results[0].location.street }} {{ card.results[0].location.street }}
-        {{ card.results[0].location.street }}{{ card.results[0].location.street }}
-        <br><br><b>Lorem ipsum dolores est kolomnus??</b>
-      </ion-row>
-    </ion-grid>
+    <statistics #statisticsComponent></statistics>
+    <!-- Display stats component here -->
 
-    <ion-footer class="answers" position="bottom">
-        <button ion-button class="answers__no" (click)="chosenAnswer('no')">Nie</button>
-        <button ion-button class="answers__yes" (click)="chosenAnswer('yes')">Tak</button>
-    </ion-footer>
-    
-  </ion-content>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-grid text-center *ngIf="card" class="card">
+    <ion-row justify-content-center align-items-center class="card__title">
+      <h3>{{ card.title }}</h3>
+    </ion-row>
+    <ion-row justify-content-center align-items-center class="card__illustration">
+      <!-- <img src="assets/imgs/blank-image.png"> -->
+      <img [src]="card.pictureURL">
+    </ion-row>
+    <ion-row justify-content-center align-items-center class="card__question">
+      {{ card.description }}
+      <br>
+      <br>
+      <b>{{card.question}}</b>
+    </ion-row>
+  </ion-grid>
+
+  <ion-footer class="answers" position="bottom">
+    <button ion-button class="answers__no" (click)="chosenAnswer('no')">Nie</button>
+    <button ion-button class="answers__yes" (click)="chosenAnswer('yes')">Tak</button>
+  </ion-footer>
+
+</ion-content>
