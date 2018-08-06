@@ -5,7 +5,7 @@ const cardLottery = require("./card_lottery");
 const paramsDefaults = {
   param1: 100,
   param2: 200,
-  cash: 0
+  cash: 300
 };
 
 let params;

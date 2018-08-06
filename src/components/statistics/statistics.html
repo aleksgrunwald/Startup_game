@@ -1,9 +1,12 @@
 <!-- Generated template for the StatisticsComponent component -->
 <section *ngIf="statistics">
   <ul class="stats">
-    <li class="stats__element" *ngFor="let number of statistics.data | slice:0:4; let i=index">
-      <div class="stats__element__icon"></div>
-      <p>{{ number }}</p>
+    <li class="stats__element" *ngFor="let number of statistics.data | slice:0:3; let i=index">
+      <!-- <div class="stats__element__icon" >
+        <img [ngStyle]="{'background-image': 'url(' + icon[i] + ')'}">
+      </div>  -->
+          <img class="stats__element__icon" [ngStyle]="{'background-image': 'url(' + icon[i] + ')'}">
+      <p [ngClass]="{'stats__element__green': changedStatistics[i].green, 'stats__element__red': changedStatistics[i].red}">{{ number }}</p>
     </li>
   </ul>
 </section>

@@ -14,7 +14,7 @@ export class StatisticsServiceProvider {
   downloadStatistics() {
     const params = getParams();
     return {
-      data: [params.param1, params.param2, params.cash, 0]
+      data: [params.param1, params.param2, params.cash]
     };
     // return this.http.get('https://qrng.anu.edu.au/API/jsonI.php?length=10&type=uint8');
   }

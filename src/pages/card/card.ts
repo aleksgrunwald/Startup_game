@@ -27,5 +27,6 @@ export class CardPage {
     this.cardServiceProvider.sendAnswer(answer);
     this.card = this.cardServiceProvider.getCardData();
     this.statisticsComponent.getStatistics();
+    
   }
 }
