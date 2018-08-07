@@ -13,7 +13,8 @@ export class HomePage {
   }
 
   showCard() {
-    this.navCtrl.push(CardPage)
+    // this.navCtrl.push(CardPage)
+    this.navCtrl.setRoot(CardPage);
   }
 
 }

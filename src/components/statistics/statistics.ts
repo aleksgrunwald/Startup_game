@@ -9,7 +9,6 @@ import { IonicPage, NavController, NavParams } from "ionic-angular";
 export class StatisticsComponent {
   statistics: any = [];
   changedStatistics: any = {};
-  startOfTheGame: boolean = true;
   icon: any = [];
 
   constructor(
@@ -43,8 +42,8 @@ export class StatisticsComponent {
         this.changedStatistics[i].red = false;
         this.changedStatistics[i].green = false;
 
-        if (!this.startOfTheGame) {
-          if ((this.statistics.data[i] == data.data[i])||(this.startOfTheGame)) {
+        if (this.statistics.data) {
+          if (this.statistics.data[i] == data.data[i]) {
           } else {
 
             if (this.statistics.data[i] > data.data[i])
@@ -56,7 +55,6 @@ export class StatisticsComponent {
 
 
     this.statistics = data;
-    this.startOfTheGame = false;
 
     setTimeout(() => {
       this.refreshStatisticsColor(data);
