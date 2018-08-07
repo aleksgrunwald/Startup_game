@@ -25,7 +25,6 @@ export class StatisticsComponent {
 
   refreshStatisticsColor (data : any) {
     for (var i = 0; i < data.data.length; i++) { 
-      console.log(i);
         this.changedStatistics[i].red = false;
         this.changedStatistics[i].green = false;
     }

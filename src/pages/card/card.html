@@ -10,27 +10,28 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+    <div (swipe)="chosenAnswer($event)" padding class="card-container">
 
-  <ion-grid text-center *ngIf="card" class="card">
-    <ion-row justify-content-center align-items-center class="card__title">
-      <h3>{{ card.title }}</h3>
-    </ion-row>
-    <ion-row justify-content-center align-items-center class="card__illustration">
-      <!-- <img src="assets/imgs/blank-image.png"> -->
-      <img [src]="card.pictureURL">
-    </ion-row>
-    <ion-row justify-content-center align-items-center class="card__question">
-      {{ card.description }}
-      <br>
-      <br>
-      <b>{{card.question}}</b>
-    </ion-row>
-  </ion-grid>
+      <ion-grid text-center *ngIf="card" class="card">
+        <ion-row justify-content-center align-items-center class="card__title">
+          <h3>{{ card.title }}</h3>
+        </ion-row>
+        <ion-row justify-content-center align-items-center class="card__illustration">
+          <!-- <img src="assets/imgs/blank-image.png"> -->
+          <img [src]="card.pictureURL">
+        </ion-row>
+        <ion-row justify-content-center align-items-center class="card__question">
+          {{ card.description }}
+          <br>
+          <br>
+          <b>{{card.question}}</b>
+        </ion-row>
+      </ion-grid>
 
-  <ion-footer class="answers" position="bottom">
-    <button ion-button class="answers__no" (click)="chosenAnswer('no')" >Nie</button>
-    <button ion-button class="answers__yes" (click)="chosenAnswer('yes')" >Tak</button>
-  </ion-footer>
-
+      <ion-footer class="answers" position="bottom">
+        <button ion-button class="answers__no" (click)="chosenAnswer($event)" >Nie</button>
+        <button ion-button class="answers__yes" (click)="chosenAnswer($event)" >Tak</button>
+      </ion-footer>
+    </div>
 </ion-content>

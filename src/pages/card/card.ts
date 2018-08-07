@@ -23,10 +23,27 @@ export class CardPage {
     this.statisticsComponent.getStatistics();
   }
 
-  chosenAnswer(answer) {
-    this.cardServiceProvider.sendAnswer(answer);
-    this.card = this.cardServiceProvider.getCardData();
-    this.statisticsComponent.getStatistics();
+  chosenAnswer(event) {
+
+    console.log(event)
+
+//  switch (event.pointerType) {
+   
+//           case "touch":
+
+//           this.cardServiceProvider.sendAnswer(event);
+//           this.card = this.cardServiceProvider.getCardData();
+//           this.statisticsComponent.getStatistics();
+//           break;
+
+//           case SwipeEvent:
+//               switch (event.offsetDirection) {
+//                 case 2: this.cardServiceProvider.sendAnswer("no"); break;
+//                 case 4: this.cardServiceProvider.sendAnswer("yes"); break;
+//                 default: console.log("magic"); break;
+//               };
+//             break;
+//  }
     
   }
 }
