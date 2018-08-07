@@ -1,22 +1,22 @@
 import { Component } from '@angular/core';
+import { PopoverController, NavController } from '../../../node_modules/ionic-angular/umd';
 
-/**
- * Generated class for the CardDetailsPopoverComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
   selector: 'card-details-popover',
   templateUrl: 'card-details-popover.html'
 })
 export class CardDetailsPopoverComponent {
 
-  text: string;
 
-  constructor() {
-    console.log('Hello CardDetailsPopoverComponent Component');
-    this.text = 'Hello World';
+  constructor(public navCtrl: NavController,public popoverCtrl: PopoverController) {
+    
+  }
+
+  presentPopover(myEvent) {
+    let popover = this.popoverCtrl.create(this);
+    popover.present({
+      ev: myEvent
+    });
   }
 
 }
