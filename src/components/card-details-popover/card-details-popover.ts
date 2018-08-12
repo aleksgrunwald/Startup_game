@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PopoverController, NavController } from '../../../node_modules/ionic-angular/umd';
+import { IonicPage, NavController, NavParams, PopoverController } from "ionic-angular";
 
 @Component({
   selector: 'card-details-popover',
@@ -8,15 +8,12 @@ import { PopoverController, NavController } from '../../../node_modules/ionic-an
 export class CardDetailsPopoverComponent {
 
 
-  constructor(public navCtrl: NavController,public popoverCtrl: PopoverController) {
+  constructor(
     
-  }
+  ) {
+    
+    
 
-  presentPopover(myEvent) {
-    let popover = this.popoverCtrl.create(this);
-    popover.present({
-      ev: myEvent
-    });
   }
 
 }

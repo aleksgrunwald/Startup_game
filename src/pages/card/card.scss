@@ -5,8 +5,22 @@
   justify-content: center;
   position: relative;
   top: 40px;
+  &__detailsButton {
+    height: 30px;
+    width: 30px;
+    right: 3%;
+    top: 1%;
+    position: absolute;
+    border-radius: 80%;
+    ion-icon {
+      font-size: 30px;
+      position: relative;
+    }
+  }
+
   &__title {
     margin: 5% auto;
+
   }
   &__illustration {
     margin: 9% auto;
@@ -15,7 +29,6 @@
     margin: 5% auto;
   }
   &__illustration img {
-    // filter: blur(15px) saturate(7) grayscale(50%);
     border-radius: 50%;
     width: 230px;
     height: 230px;
@@ -43,3 +56,6 @@
 .scroll-content {
   padding: 0 !important;
 }
+
+
+

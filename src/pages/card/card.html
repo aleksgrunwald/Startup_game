@@ -11,13 +11,15 @@
 </ion-header>
 
 <ion-content padding>
-
+        <button ionic-button class="card__detailsButton" (click)="presentPopover()">
+          <ion-icon name="help" ></ion-icon>
+      </button>
+    
   <ion-grid text-center *ngIf="card" class="card">
-    <ion-row justify-content-center align-items-center class="card__title">
+    <ion-row justify-content-center align-items-center class="card__title">   
       <h3>{{ card.title }}</h3>
     </ion-row>
     <ion-row justify-content-center align-items-center class="card__illustration">
-      <!-- <img src="assets/imgs/blank-image.png"> -->
       <img [src]="card.pictureURL">
     </ion-row>
     <ion-row justify-content-center align-items-center class="card__question">
