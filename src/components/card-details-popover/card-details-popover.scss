@@ -1,14 +1,22 @@
-// .cardDetailsPopover {
-//     // top: 10%;
-//     // height: 70%;
-//     div {
-      
-//   }
-// }
 .cardDetailsPopover {
-  // height: 60%;
-  
+  display: block;
   &__informationContainer {
     padding: 20px;
+  }
+  &__buttonsBar {
+     position: fixed;
+     right: 0;
+    &__close {
+       height: 20px;
+       width: 20px;
+    }
+  }
+}
+
+.platform-ios	{
+  .cardDetailsPopover {
+    &__buttonsBar {
+       right: 10%;
+    }
   }
 }
