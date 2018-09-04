@@ -2,7 +2,7 @@
 <section *ngIf="statistics">
   <ul class="stats">
     <li class="stats__element" *ngFor="let number of statistics.data | slice:0:3; let i=index">
-          <img class="stats__element__icon" [src]="icon[i]">
+      <img class="stats__element__icon" [src]="icon[i]">
       <p [ngClass]="{'stats__element__green': changedStatistics[i].green, 'stats__element__red': changedStatistics[i].red}">{{ number }}</p>
     </li>
   </ul>

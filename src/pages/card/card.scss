@@ -1,9 +1,12 @@
+<<<<<<< HEAD
 .card-container {
   border: solid 2px black;
   height: 100%;
   width: 100%;
 }
 
+=======
+>>>>>>> e74f0262893a1a65256d2aff2c70e845745a9931
 
 .card {
   display: flex;
@@ -11,8 +14,21 @@
   justify-content: center;
   position: relative;
   top: 40px;
+  &__detailsButton {
+    height: 30px;
+    width: 30px;
+    right: 3%;
+    top: 1%;
+    position: absolute;
+    border-radius: 80%;
+    ion-icon {
+      font-size: 25px;
+      position: relative;
+    }
+  }
   &__title {
     margin: 5% auto;
+
   }
   &__illustration {
     margin: 9% auto;
@@ -21,7 +37,6 @@
     margin: 5% auto;
   }
   &__illustration img {
-    // filter: blur(15px) saturate(7) grayscale(50%);
     border-radius: 50%;
     width: 230px;
     height: 230px;
@@ -49,3 +64,6 @@
 .scroll-content {
   padding: 0 !important;
 }
+
+
+

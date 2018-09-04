@@ -13,6 +13,7 @@ import { CardPage } from '../pages/card/card';
 import { CardServiceProvider } from '../providers/card-service/card-service';
 import { StatisticsComponent } from '../components/statistics/statistics';
 import { StatisticsServiceProvider } from '../providers/statistics-service/statistics-service';
+import { CardDetailsPopoverComponent } from '../components/card-details-popover/card-details-popover';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StatisticsServiceProvider } from '../providers/statistics-service/stati
     HomePage,
     ListPage,
     CardPage,
-    StatisticsComponent
+    StatisticsComponent,
+    CardDetailsPopoverComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,9 @@ import { StatisticsServiceProvider } from '../providers/statistics-service/stati
     MyApp,
     HomePage,
     ListPage,
-    CardPage
+    CardPage,
+    StatisticsComponent,
+    CardDetailsPopoverComponent
   ],
   providers: [
     StatusBar,
