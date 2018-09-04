@@ -26,26 +26,27 @@ export class CardPage {
   }
 
   chosenAnswer(event) {
+    console.log(event.pointerType);
 
-    console.log(event)
+    // switch (event.pointerType) {
+      
+    //           case 'MouseEvent':
 
-//  switch (event.pointerType) {
-   
-//           case "touch":
+    //           console.log("clicked moused");
+    //           // this.cardServiceProvider.sendAnswer(event);
+    //           // this.card = this.cardServiceProvider.getCardData();
+    //           // this.statisticsComponent.getStatistics();
+    //           break;
 
-//           this.cardServiceProvider.sendAnswer(event);
-//           this.card = this.cardServiceProvider.getCardData();
-//           this.statisticsComponent.getStatistics();
-//           break;
-
-//           case SwipeEvent:
-//               switch (event.offsetDirection) {
-//                 case 2: this.cardServiceProvider.sendAnswer("no"); break;
-//                 case 4: this.cardServiceProvider.sendAnswer("yes"); break;
-//                 default: console.log("magic"); break;
-//               };
-//             break;
-//  }
+    //           case 'SwipeEvent':
+    //           console.log("swipe event");
+    //               // switch (event.offsetDirection) {
+    //               //   case 2: this.cardServiceProvider.sendAnswer("no"); break;
+    //               //   case 4: this.cardServiceProvider.sendAnswer("yes"); break;
+    //               //   default: console.log("magic"); break;
+    //               // };
+    //             break;
+    // }
     
   }
 

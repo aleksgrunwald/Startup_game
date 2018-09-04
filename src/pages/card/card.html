@@ -9,11 +9,11 @@
 </ion-header>
 
 <ion-content padding>
-        <button ionic-button class="card__detailsButton" (click)="presentPopover()">
-          <ion-icon name="help" ></ion-icon>
-      </button>
+  <button ionic-button class="card__detailsButton" (click)="presentPopover()">
+      <ion-icon name="help"></ion-icon>
+  </button>
 
-      <!-- <div (swipe)="chosenAnswer($event)" padding class="card-container"></div> -->
+  <div (swipe)="chosenAnswer($event)" padding class="card-container">
     
   <ion-grid text-center *ngIf="card" class="card">
     <ion-row justify-content-center align-items-center class="card__title">   
@@ -29,15 +29,16 @@
       <b>{{card.question}}</b>
     </ion-row>
   </ion-grid>
+  </div>
 
-  <ion-footer class="answers" position="bottom">
+  <!-- <ion-footer class="answers" position="bottom">
     <button ion-button class="answers__no" (click)="chosenAnswer('no')" >Nie</button>
     <button ion-button class="answers__yes" (click)="chosenAnswer('yes')" >Tak</button>
-  </ion-footer>
+  </ion-footer> -->
 
       <ion-footer class="answers" position="bottom">
-        <button ion-button class="answers__no" (click)="chosenAnswer($event)" >Nie</button>
-        <button ion-button class="answers__yes" (click)="chosenAnswer($event)" >Tak</button>
+        <button ion-button class="answers__no" (click)="chosenAnswer('MouseEvent')" >Nie</button>
+        <button ion-button class="answers__yes" (click)="chosenAnswer('MouseEvent')" >Tak</button>
       </ion-footer>
-      
+
 </ion-content>
