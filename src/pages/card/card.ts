@@ -33,7 +33,7 @@ export class CardPage {
               console.log("click");
               this.cardServiceProvider.sendAnswer(event);
               this.card = this.cardServiceProvider.getCardData();
-              // this.statisticsComponent.getStatistics();
+              this.statisticsComponent.getStatistics();
               break;
 
               case "swipe":
@@ -41,10 +41,12 @@ export class CardPage {
                     case 2: console.log("no 2");
                      this.cardServiceProvider.sendAnswer("no");
                      this.card = this.cardServiceProvider.getCardData();
+                     this.statisticsComponent.getStatistics();
                     break;
                     case 4: console.log("yes 4");
                      this.cardServiceProvider.sendAnswer("yes");
                      this.card = this.cardServiceProvider.getCardData();
+                     this.statisticsComponent.getStatistics();
                     break;
                   };
                 break;
