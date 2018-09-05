@@ -27,29 +27,26 @@ export class CardPage {
 
   chosenAnswer(event) {
     // console.log(event);
-    switch (event.type) {
-      
-              case "click":
-              console.log("click");
-              this.cardServiceProvider.sendAnswer(event);
-              this.card = this.cardServiceProvider.getCardData();
-              this.statisticsComponent.getStatistics();
-              break;
-
-              case "swipe":
-                  switch (event.offsetDirection) {
-                    case 2: console.log("no 2");
-                     this.cardServiceProvider.sendAnswer("no");
-                     this.card = this.cardServiceProvider.getCardData();
-                     this.statisticsComponent.getStatistics();
-                    break;
-                    case 4: console.log("yes 4");
-                     this.cardServiceProvider.sendAnswer("yes");
-                     this.card = this.cardServiceProvider.getCardData();
-                     this.statisticsComponent.getStatistics();
-                    break;
-                  };
-                break;
+    switch (event.type) { 
+      case "click":
+        this.cardServiceProvider.sendAnswer(event.target.innerText);
+        this.card = this.cardServiceProvider.getCardData();
+        this.statisticsComponent.getStatistics();
+        break;
+      case "swipe":
+        switch (event.offsetDirection) {
+          case 2:
+            this.cardServiceProvider.sendAnswer("TAK");
+            this.card = this.cardServiceProvider.getCardData();
+            this.statisticsComponent.getStatistics();
+          break;
+          case 4:
+            this.cardServiceProvider.sendAnswer("NIE");
+            this.card = this.cardServiceProvider.getCardData();
+            this.statisticsComponent.getStatistics();
+          break;
+        };
+        break;
     }
     
   }
