@@ -14,7 +14,7 @@
   </button>
 
   <div (swipe)="chosenAnswer($event)" padding class="card-container">
-    
+    <!-- <ion-slides> -->
   <ion-grid text-center *ngIf="card" class="card">
     <ion-row justify-content-center align-items-center class="card__title">   
       <h3>{{ card.title }}</h3>
@@ -29,6 +29,7 @@
       <b>{{card.question}}</b>
     </ion-row>
   </ion-grid>
+<!-- </ion-slides> -->
   </div>
 
   <!-- <ion-footer class="answers" position="bottom">
@@ -37,8 +38,8 @@
   </ion-footer> -->
 
       <ion-footer class="answers" position="bottom">
-        <button ion-button class="answers__no" (click)="chosenAnswer('MouseEvent')" >Nie</button>
-        <button ion-button class="answers__yes" (click)="chosenAnswer('MouseEvent')" >Tak</button>
+        <button ion-button class="answers__no" (click)="chosenAnswer($event)" >Nie</button>
+        <button ion-button class="answers__yes" (click)="chosenAnswer($event)" >Tak</button>
       </ion-footer>
 
 </ion-content>
